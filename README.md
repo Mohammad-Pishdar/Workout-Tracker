@@ -28,7 +28,7 @@
 
   ## Contributing
 
-  This project was written by me as a homework activity for my Web Development Coding Bootcamp at the University of Sydney. I have used codes from the related class activities as a template to write this app.
+  This project was written by me as a homework activity for my Web Development Coding Bootcamp at the University of Sydney. The frontend was provided and I only added the Moongoose schema model and created the required server.js file and html and api routes. I have used codes from the related class activities as a template to write this app.
 
   ## Questions
 
