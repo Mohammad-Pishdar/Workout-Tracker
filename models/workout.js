@@ -11,16 +11,16 @@ const workoutSchema = new Schema({
         type: {
             type: String,
             trim: true,
-            required: "You have to enetr the type of excercise you want to start (eg. cardio, resistance, etc)"
+            required: "Enter an exercise type"
         },
         name: {
             type: String,
             trim: true,
-            required: "Please also enter the name of the exercise"
+            required: "Enter an exercise name"
         },
         duration: {
             type: Number,
-            required: "How long the duration of the exercise should be (in minutes)"
+            required: "Enter an exercise duration in minutes"
         },
         weight: {
             type: Number
@@ -35,16 +35,20 @@ const workoutSchema = new Schema({
             type: Number
         }
     }]
+}, {
+    toJSON: {
+        // Virtuals are typically used for computed properties on documents.By default, Mongoose does not include virtuals when you convert a document to JSON. For example, if you pass a document to Express' res.json() function, virtuals will not be included by default.To include virtuals in res.json(), you need to set the toJSON schema option to { virtuals: true }.
+        virtuals: true
+    }
 });
 
-// adds a dynamically-created property to schema
-
-UserSchema.methods.calculateTotalDuration = function () {
-    return this.exercises.reduce((totalDuration, exercise) => {
-        return totalDuration + exercise.duration;
+// Here we use what is called a virtual schema getter function to create a virtual property for our model called "totalDuration". We use a JavaScript reduce() function that takes the array of "exercises" in our model and reduce it down to the sum of the durations of all the exercises the user has defined for that particular day.
+workoutSchema.virtual("totalDuration").get(function () {
+    return this.exercises.reduce((total, exercise) => {
+        return total + exercise.duration;
+        // Number 0 here is an optional initial value for our reduce function. It just indicates that the initial "total" parameter value of the reduce function is 0 and it should be incremented by the amount of exercise.duration property
     }, 0);
-};
-
+});
 
 const Workout = mongoose.model("Workout", workoutSchema);
 
