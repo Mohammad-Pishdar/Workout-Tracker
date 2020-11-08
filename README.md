@@ -16,7 +16,7 @@
 
   ## Installation
 
-  This app is hosted on heroku using mLab MongoDB Add-on which acts as an online host for its Mongo database. You can access the app by clicking [here](https://powerful-everglades-16392.herokuapp.com/).
+  This app is hosted on heroku using mLab MongoDB Add-on which acts as an online host for its Mongo database. You can access the app by clicking here: https://powerful-everglades-16392.herokuapp.com/.
 
   ## Usage
 
