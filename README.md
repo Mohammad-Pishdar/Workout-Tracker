@@ -21,6 +21,8 @@
   ## Usage
 
   As a user, you are be able to view, create and track daily workouts. You can log multiple exercises in a workout on a given day. You can also track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, you're able to track the distance traveled.
+  ![main page](https://github.com/Mohammad-Pishdar/Workout-Tracker/blob/master/readmeImages/workouttracker1.jpg)
+  ![dashboard](https://github.com/Mohammad-Pishdar/Workout-Tracker/blob/master/readmeImages/workouttracker2.jpg)
 
   ## License
 
